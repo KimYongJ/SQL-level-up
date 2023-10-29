@@ -7,8 +7,7 @@
 
 # DBMS 아키텍처
 
-![사진1](https://github.com/KimYongJ/SQL-level-up/assets/106525587/f6902ac8-c5b6-466b-9710-0ee489f894e3)
-
+<img width="400" alt="사진2" src="https://github.com/KimYongJ/SQL-level-up/assets/106525587/f6902ac8-c5b6-466b-9710-0ee489f894e3">
 
 ## 1. 쿼리 평가 엔진
 
