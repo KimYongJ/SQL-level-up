@@ -1,6 +1,9 @@
 # 조건 분기, 집합 연산, 윈도우 함수, 갱신
 
+<br/><br/>
+
 ## 1. SQL과 조건 분기
+
 
 ### **(1) CASE식의 구문**
 
@@ -17,7 +20,10 @@ END
 
 - **설명 :** 처음에 있는 WHEN 구를 먼저 확인하여 맞으면 THEN 구에서 지정한 식이 리턴되며 CASE 식은 전체 종료됩니다. 만약 조건에 맞지 않으면 다음 WHEN 구로 이동해 같은 처리를 반복하며 끝까지 맞지 않는다면 ELSE에서 지정한 식이 반환되어 종료됩니다.
 
+<br/><br/><br/>
+
 ## 2. SQL의 집합 연산
+
 
 ### **(1) UNION**
 
@@ -29,6 +35,8 @@ UNION
 SELECT * FROM ADDRESS2
 ```
 
+<br/>
+
 ### **(2) INTERSECT**
 
 - **INTERSECT(인터섹트)은 교집합을 의미합니다.** 양쪽 테이블에 공통으로 존재하는 레코드를 출력합니다. 유니온 연산과 마찬가지로 중복된 것이 있다면 해당 레코드는 제외 됩니다.
@@ -38,6 +46,8 @@ SELECT * FROM ADDRESS1
 INTERSECT
 SELECT * FROM ADDRESS2
 ```
+
+<br/>
 
 ### **(3) EXCEPT**
 
@@ -52,14 +62,15 @@ SELECT * FROM ADDRESS2
 - **설명 :** 위의 쿼리는 간단히 말해 ADDRESS1 - ADDRESS2 입니다. ADDRESS2에 있는 데이터가 ADDRESS1에 있다면 이것을 제외한 ADDRESS1을 보여줍니다.
 - **주의 :** UNION과 INTERSECT는 테이블의 순서에 상관없이 결과가 같지만, EXCEPT는 맨 앞에 적은 테이블을 기준으로 출력됩니다.
 
+<br/><br/><br/>
+
 ## 3. 윈도우 함수
 
 - **윈도우 함수는 집약 기능이 없는 GROUP BY 구 입니다.** 즉, 일반적인 GROUP BY 구는 데이터를 그룹으로 나누고, 잘라 보여줄 수 있지만, 윈도우 함수는 여기서 자르기 기능만 있는 것 입니다.
 - **PARTITION BY :** 윈도우 함수가 테이블을 자를 때 사용하는 구입니다. 윈도우 함수는 테이블을 자른 후 집약하지 않기 때문에 GROUP BY 와 다르게 출력되는 레코드 수가 기존 테이블과 같습니다.
 
 ```jsx
-SELECT address,
-			 COUNT(*) OVER ( PARTITION BY address )
+SELECT address, COUNT(*) OVER ( PARTITION BY address )
 FROM ADDRESS
 [실행 결과]
 address | count
@@ -135,6 +146,8 @@ name | age | dens_rnk
   남  |  19 |  4
   ```
 
+<br/><br/><br/>
+
 ## 4. 트랜잭션과 갱신 ( 삽입, 삭제, 갱신 )
 
 ### **(1) 삽입( INSERT )**
@@ -152,6 +165,8 @@ INSERT INTO ADDRESS ( name, age, address )
 
 - **해설 :** INSERT INTO 라는 명령어 후 테이블명을 바로 적어줍니다. 그 후 괄호’()’ 를 감싸 필드 명을 써줍니다. 그리고 VALUES 키워드 뒤에 다시 괄호’()’ 를 쓰고 값을 넣어 줍니다. 이 때 필드 순서와 값을 넣는 순서의 싱크가 맞아야 합니다. 순서가 다르면 오류가 발생하거나 원하는 값이 들어가지 않을 수 있습니다. 또한 문자열을 넣을 때는 반드시 작은 따옴표를 써야 합니다. 숫자는 그냥 적어도 상관없습니다. 또한 NULL을 넣고 싶다면 작은 따옴표를 쓰지 않고 NULL을 그대로 입력합니다.
 
+<br/>
+
 ### **(2) 삭제( DELETE )**
 
 - 데이터를 삭제할 때는 하나의 레코드 단위로 하는 것이 아니라 여러 개의 레코드 단위로 처리를 합니다. 그렇기 때문에 모두를 지울 수도있고, 조건을 걸어 원하는 데이터만 지울 수도 있습니다.
@@ -164,6 +179,8 @@ DELETE FROM ADDRESS;
 DELETE FROM ADDRESS
 WHERE address = '서울시';
 ```
+
+<br/>
 
 ### **(3) 갱신( UPDATE )**
 
