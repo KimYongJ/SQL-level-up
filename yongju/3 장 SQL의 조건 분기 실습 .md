@@ -55,9 +55,9 @@ location | pop_man | pop_won
 
 ```jsx
 [ 정답 ]
-select	location
-,		SUM(case when SEX=1 then pop else 0 END) as POP_MAN
-,		SUM(case when SEX=2 then pop else 0 END) as POP_WON
+select  location
+,       SUM(case when SEX=1 then pop else 0 END) as POP_MAN
+,       SUM(case when SEX=2 then pop else 0 END) as POP_WON
 from POPULATION
 group by location;
 ```
@@ -109,8 +109,8 @@ emp_name |    team
 
 ```jsx
 [ 정답 ]
-select	emp_name
-,		case when count(team_id) = 1 then max(team) else concat(count(team_id),'개를 겸무') end as team
+select  emp_name
+,       case when count(team_id) = 1 then max(team) else concat(count(team_id),'개를 겸무') end as team
 from employees
 group by emp_name;
 ```
