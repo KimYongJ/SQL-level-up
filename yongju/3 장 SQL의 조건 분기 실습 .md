@@ -44,11 +44,11 @@ insert into population(location,sex,pop)values('용인',2,200);
 ```jsx
 [ 실행 결과 ]
 location | pop_man | pop_won
-수원	       90	    100
-성남	       60	    40
-용인	       20	    200
-광명	       100	    50
-일산	       100	    100
+수원	       90	  100
+성남	       60	  40
+용인	       20	  200
+광명	       100	  50
+일산	       100	  100
 ```
 
 <br/>
@@ -98,11 +98,11 @@ insert into employees(emp_id,team_id,emp_name,team)values(105,2,'하씨','개발
 ```jsx
 [ 실행 결과 ]
 emp_name |    team
-  조씨	    3개를 겸무
-  하씨  	2개를 겸무
-  백씨	    4개를 겸무
-  김씨	      개발
-  장씨	      영업
+  조씨        3개를 겸무
+  하씨        2개를 겸무
+  백씨        4개를 겸무
+  김씨        개발
+  장씨        영업
 ```
 
 <br/>
