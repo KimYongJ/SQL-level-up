@@ -182,7 +182,7 @@ where hight in (low,low-1,low+1);
 
 - **해설 :** row_number 함수를 사용해 순번을 각각 붙이는데 이 때,내림차순과 오름차순으로 각각 붙여 놓습니다. 레코드가 홀수라면 hight = low 가 반드시 성립하지만 짝수일 경우 그렇지 않습니다. 그렇기 때문에 where 절에 hight in (low,low-1,low+1); 쿼리가 들어간것입니다. 데이터가 짝수일 때와 홀 수 일 때를 그림으로 표현하면 아래와 같습니다.
 
-사진 (1) 
+![사진1](https://github.com/KimYongJ/SQL-level-up/assets/106525587/18f383cd-61e4-46ae-977a-ed569501dd1a)
 
 - 위 쿼리보다 성능적으로 더 개선된 쿼리를 짤 수 있습니다.
 
